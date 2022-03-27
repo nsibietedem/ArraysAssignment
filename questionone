@@ -1,0 +1,12 @@
+// See https://aka.ms/new-console-template for more information
+int [] myArray = new int [20];
+int i;
+int j;
+for (i = 0; i < 20; i++)
+{
+    myArray[i] = i * 5;
+}
+for (j = 0; j < 20; j++)
+{
+    Console.WriteLine(myArray[j]);
+}
