@@ -1,0 +1,50 @@
+            int sum = 0, start = 0, end = 0;
+            bool sumFound = false;
+
+            Console.Write("Enter S: ");
+            int s = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter array length: ");
+            int length = int.Parse(Console.ReadLine());
+
+            int[] arrayone = new int[length];
+                        
+            for (int i = 0; i < length; i++)
+            {
+                Console.Write("Enter {0} element: ", i);
+                arrayone[i] = int.Parse(Console.ReadLine());
+            }
+            
+            for (int i = 0; i < length - 1; i++)
+            {
+                sum = arrayone[i];
+
+                for (int j = i + 1; j < length; j++)
+                {
+                    sum += arrayone[j];
+                    if (sum == s)
+                    {
+                        start = i;
+                        end = j;
+                        sumFound = true;
+                        break;
+                    }
+                }
+
+                if (sumFound)
+                { 
+                  break;
+                }
+            }
+
+            if (sumFound) 
+            {
+            for (int i = start; i <= end; i++) 
+            {
+            Console.Write("{0},", arrayone[i]);
+            }
+            else
+            {
+            Console.WriteLine("No sum found.");
+            }
+            }
