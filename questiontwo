@@ -1,0 +1,48 @@
+int lengthOfArr1;
+int lengthOfArr2;
+Console.WriteLine("Enter the lenght Of Array one");
+lengthOfArr1 = int.Parse(Console.ReadLine());
+Console.WriteLine("Enter the lenght of Array two");
+lengthOfArr2 = int.Parse(Console.ReadLine());
+
+int [] array1= new int[lengthOfArr1];
+int [] array2= new int[lengthOfArr2];
+int EqualArray=0;
+
+for (int i = 0; i < lengthOfArr1; i++)
+{
+    Console.WriteLine("Enter element {0} for array one", i);
+    array1[i]=int.Parse(Console.ReadLine());
+}
+for (int i = 0; i < lengthOfArr2; i++)
+{
+    Console.WriteLine("Enter element {0} for array two", i);
+    array2[i] = int.Parse(Console.ReadLine());
+}
+
+if (lengthOfArr1 != lengthOfArr2)
+{
+    Console.WriteLine("The arrays are not Equal in Length");
+}
+else
+{
+    for (int i = 0; i < lengthOfArr1; i++)
+    {
+        if (array1[i] == array2[i])
+        {
+            EqualArray++;
+            
+        }
+        else
+        {
+            Console.WriteLine("Arrays are different");
+            break;
+        }
+       
+    }
+      
+    if (EqualArray == lengthOfArr1)
+    {
+        Console.WriteLine("Arrays are the same");
+    }
+}
