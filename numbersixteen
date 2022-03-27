@@ -1,0 +1,55 @@
+            int temp;
+             int n;
+            int key;
+            
+            Console.Write("Enter number of elements in the array ");
+            n=int.Parse(Console.ReadLine());
+            Console.Write("Enter number to be searched ");
+            key = int.Parse(Console.ReadLine());
+            int[] arrayone = new int[n]; 
+            for (int i = 0; i < n; i++)
+			{
+                Console.Write("Enter the element in {0} ", i );
+			 arrayone[i]=int.Parse(Console.ReadLine());
+			}
+
+
+
+            for (int i = 0; i < arrayone.Length; i++)
+            {
+                for (int j = 0; j < arrayone.Length; j++)
+                {
+                    if (arrayone[i] < arrayone[j])
+                    {
+                        temp = arrayone[i];
+                        arrayone[i] = arrayone[j];
+                        arrayone[j] = temp;
+                    }
+                }
+            }
+            for (int i = 0; i < arrayone.Length; i++)
+            {
+                Console.WriteLine("{0}", arrayone[i]);
+
+            }
+            int min = 0;
+            int max = arrayone.Length - 1;
+
+            while (min <= max)
+            {
+                int mid = (min + max) / 2;
+                if (key == arrayone[mid])
+                {
+                    Console.WriteLine(arrayone[mid]);
+                    break;
+                }
+                else if (key < arrayone[mid])
+                {
+                    max = mid - 1;
+                }
+                else
+                {
+                    min = mid + 1;
+                }
+            }
+            Console.WriteLine("Number not found");
