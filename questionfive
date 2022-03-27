@@ -1,0 +1,40 @@
+
+Console.Write("Enter the lenght of the Array");
+int lenght = int.Parse(Console.ReadLine());
+int sequence = 0;
+int sequenceComparism = 0;
+int value = 0;
+int beginning = 0;
+
+int[] myArray = new int[lenght];
+for (int i = 0; i < lenght; i++)
+{
+    Console.Write("Enter the element {0}: ", i);
+    myArray[i] = int.Parse(Console.ReadLine());
+}
+for (int i = 0; i < lenght-1; i++)
+{
+    if (myArray[i] <  myArray[i + 1])
+    {
+        sequence++;
+    }
+    else
+    {
+        sequence = 0;
+    }
+
+    if (sequence > sequenceComparism)
+    {
+        sequenceComparism = sequence;
+        value = i+ 1;
+        beginning = i - sequenceComparism;
+
+    }
+
+}
+Console.Write(sequenceComparism);
+for (int j = beginning; j < value; j++)
+{
+    Console.Write(myArray[j]);
+}
+
